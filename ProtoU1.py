@@ -7,7 +7,7 @@ main.geometry('500x350')
 main.configure(background='#E5C99C')
 
 def test(event):
-    print(event)
+    print('yeet')
     
 topframe = Frame(main, bg='grey',height='30')
 topframe.grid(row=0, column=0) # make as wide as main
@@ -16,9 +16,9 @@ can1.create_line(0, 5, 20, 5,fill='white')
 can1.create_line(0, 10, 20, 10,fill='white')
 can1.create_line(0, 15, 20, 15,fill='white')
 can1.bind('test',test )
-bu1 = Button(topframe, text='Callender', highlightbackground='grey') #add command feature for all
-bu2 = Button(topframe, text='Add A Recepie', highlightbackground='grey')
-bu3 = Button(topframe, text='Shopping List', highlightbackground='grey') 
+bu1 = Button(topframe, text='Callender', highlightbackground='grey', command='test')
+bu2 = Button(topframe, text='Add A Recepie', highlightbackground='grey', command='test')
+bu3 = Button(topframe, text='Shopping List', highlightbackground='grey', command='test') 
 can1.grid(row=0, column=0)
 bu1.grid(row=0, column=1)
 bu2.grid(row=0, column=2)
@@ -54,17 +54,23 @@ day3f.grid(row=1, column=2)
 day4f.grid(row=1, column=3)
 day5f.grid(row=1, column=4)
 day6f.grid(row=1, column=5)
-qday7f.grid(row=1, column=6)
+day7f.grid(row=1, column=6)
 
-units = StringVar(main)
-choices = {'Choose', 'Meters', 'Miles'}
-units.set('Choose')
+units1 = StringVar(main)
+units2 = StringVar(main)
+choices = [
+    'Choose',
+    'Meters',
+    'Miles'
+]
+units1.set('Choose')
+units2.set('Choose')
 
 otr = Frame(main, bg='white', height='50', width='50')
 otr.grid(row=2, column=0, pady=(10,0))
 conl = Label(otr, text='Easy Converter')
-con1 = OptionMenu(otr, units, choices)
-con2 = OptionMenu(otr, units, choices)
+con1 = OptionMenu(otr, units1, *choices)
+con2 = OptionMenu(otr, units2, *choices)
 conin1 = Entry(otr,)
 conin2 = Entry(otr,)
 conl.grid(row=0, column=0)
@@ -75,9 +81,9 @@ conin2.grid(row=2, column=1)
 
 pr = Frame(main, bg='white', height='50', width='50')
 pr.grid(row=3, column=0, pady=(10,0))
-p1 =Button(pr, text='Print Callender')
-p2 =Button(pr, text='Print List')
-p3 =Button(pr, text='Print Recipie')
+p1 = Button(pr, text='Print Callender')
+p2 = Button(pr, text='Print List')
+p3 = Button(pr, text='Print Recipie')
 p1.grid(row=0, column=0)
 p2.grid(row=1, column=0)
 p3.grid(row=2, column=0)
