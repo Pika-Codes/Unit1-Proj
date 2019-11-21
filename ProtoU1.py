@@ -1,30 +1,35 @@
 from tkinter import *
 from tkinter import filedialog
 
+#1a2634
+#203e5f
+#eec550
+#f9e3a3
+
 main = Tk()
 main.title('Prototype Alpha Doubble Prime')
 main.geometry('500x350')
 main.configure(background='#E5C99C')
 
-def test(event):
+def test():
     print('yeet')
     
 topframe = Frame(main, bg='grey',height='30')
 topframe.grid(row=0, column=0) # make as wide as main
-can1 = Canvas(topframe,height='20',width='125',bg='grey',highlightthickness=0)
+can1 = Canvas(topframe,height='20',width='125',bg='gray',highlightthickness=0)
 can1.create_line(0, 5, 20, 5,fill='white')
 can1.create_line(0, 10, 20, 10,fill='white')
 can1.create_line(0, 15, 20, 15,fill='white')
 can1.bind('test',test )
 bu1 = Button(topframe, text='Callender', highlightbackground='grey', command='test')
 bu2 = Button(topframe, text='Add A Recepie', highlightbackground='grey', command='test')
-bu3 = Button(topframe, text='Shopping List', highlightbackground='grey', command='test') 
+bu3 = Button(topframe, text='Shopping List', highlightbackground='grey', command='test')
 can1.grid(row=0, column=0)
 bu1.grid(row=0, column=1)
 bu2.grid(row=0, column=2)
 bu3.grid(row=0, column=3, padx=(1, 130))
 
-cal = Frame(main, bg='white', height='50', width='350')
+cal = Frame(main, bg='gray', height='50', width='350')
 cal.grid(row=1, column=0)
 day1 = Label(cal, text='Monday')
 day2 = Label(cal, text='Tuesday')
@@ -66,7 +71,7 @@ choices = [
 units1.set('Choose')
 units2.set('Choose')
 
-otr = Frame(main, bg='white', height='50', width='50')
+otr = Frame(main, bg='gray', height='50', width='50')
 otr.grid(row=2, column=0, pady=(10,0))
 conl = Label(otr, text='Easy Converter')
 con1 = OptionMenu(otr, units1, *choices)
@@ -79,18 +84,19 @@ con2.grid(row=1, column=1)
 conin1.grid(row=2, column=0)
 conin2.grid(row=2, column=1)
 
-pr = Frame(main, bg='white', height='50', width='50')
+pr = Frame(main, bg='gray', height='50', width='50')
 pr.grid(row=3, column=0, pady=(10,0))
-p1 = Button(pr, text='Print Callender')
-p2 = Button(pr, text='Print List')
-p3 = Button(pr, text='Print Recipie')
+p1 = Button(pr, text='Print Callender', highlightbackground='grey', command='test')
+p2 = Button(pr, text='Print List', highlightbackground='grey', command='test')
+p3 = Button(pr, text='Print Recipie', highlightbackground='grey'
+            , command='test')
 p1.grid(row=0, column=0)
 p2.grid(row=1, column=0)
 p3.grid(row=2, column=0)
 
 rate = StringVar()
 
-rd = Frame(main, bg='white', height='50', width='50')
+rd = Frame(main, bg='gray', height='50', width='50')
 rd.grid(row=4, column=0, pady=(10,0))
 la = Label(rd, text='How would you rate your most recent meal?')
 r1 = Radiobutton(rd, text='1', variable=rate, value='1')
