@@ -48,12 +48,6 @@ def print(*args):
         calt.write(callenprint)
         calt.close()
         wb.open_new(r'C:/Users/~/Desktop/calender.pdf')
-
-def ezcal(*args):
-    callenr = open('calender.txt', 'r')
-    callentest = callenr.readlines()
-    callenr.close
-    "for f in callentest:"
         
 def leavecal(*args):
     main.deiconify()
@@ -94,32 +88,35 @@ def cal():
    main.withdraw() #hides main window
 
 #BUILD MAIN WINDOW
-
-callenr = open('calender.txt', 'r')
-callentest = callenr.readlines()
-callenr.close
-daysready = str(days)
+try:
+    callenr = open('calender.txt', 'r')
+    callentest = callenr.readlines()
+    callenr.close
+    daysready = str(days)
     
-for food in callentest:
-    clean = food.strip(daysready)
+    for food in callentest:
+        clean = food.strip(daysready)
 
-    x = clean
+        x = clean
 
-    if x == 'Monday':
-        day1f.config(text=y)
-    elif x == 'Tuesday':
-        day2f.config(text=y)
-    elif x == 'Wednesday':
-        day3f.config(text=y)
-    elif x == 'Thursday':
-        day4f.config(text=y)
-    elif x == 'Friday':
-        day5f.config(text=y)
-    elif x == 'Saturday':
-        day6f.config(text=y)
-    elif x == 'Sunday':
-        day7f.config(text=y)
+        if x == 'Monday':
+            day1f.config(text=y)
+        elif x == 'Tuesday':
+            day2f.config(text=y)
+        elif x == 'Wednesday':
+            day3f.config(text=y)
+        elif x == 'Thursday':
+            day4f.config(text=y)
+        elif x == 'Friday':
+            day5f.config(text=y)
+        elif x == 'Saturday':
+            day6f.config(text=y)
+        elif x == 'Sunday':
+            day7f.config(text=y)
 
+except:
+    print('Make a Calendar First!')
+    
 main = Tk()
 main.title('Prototype Beta')
 main.geometry('450x150')
