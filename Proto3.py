@@ -47,6 +47,7 @@ def print(*args):
         callenprint = str(callentest)
         calt.write(callenprint)
         calt.close()
+        wb.open_new(r'C:/Users/~/Desktop/calender.pdf')
 
 def ezcal(*args):
     callenr = open('calender.txt', 'r')
