@@ -37,7 +37,7 @@ choices = [
 
 def print(*args):
     try:
-        wb.open_new(r'C:/Users/will.finlayson/Desktop/Design/Python/calender.pdf')
+        wb.open_new(r'C:/Users/~/Desktop/calender.pdf')
 
     except:  
         callenr = open('calender.txt', 'r')
