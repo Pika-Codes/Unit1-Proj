@@ -61,11 +61,8 @@ def leavecal(*args):
     cale.delete(0, 'end')
 
 def runMe(*args):
-    print(cale.get())
     menuItems.append(days1.get())
     menuItems.append(cale.get())
-    print(days1.get())
-    print(menuItems)
     callen = open('calender.txt', 'a')
     callen.write(days1.get() + ':')
     callen.write(cale.get() + ', ')
@@ -73,11 +70,8 @@ def runMe(*args):
     callenr = open('calender.txt', 'r')
     callentest = callenr.readlines()
     callenr.close
-    print(callentest)
     x = days1.get()
-    print(x)
     y = cale.get()
-    print(y)
 
     if x == 'Monday':
         day1f.config(text=y)
@@ -98,14 +92,36 @@ def cal():
    cal.deiconify() #display cal
    main.withdraw() #hides main window
 
-def test():
-    print('yeet')
-
-
 #BUILD MAIN WINDOW
+
+callenr = open('calender.txt', 'r')
+callentest = callenr.readlines()
+callenr.close
+daysready = str(days)
+    
+for food in callentest:
+    clean = food.strip(daysready)
+
+    x = clean
+
+    if x == 'Monday':
+        day1f.config(text=y)
+    elif x == 'Tuesday':
+        day2f.config(text=y)
+    elif x == 'Wednesday':
+        day3f.config(text=y)
+    elif x == 'Thursday':
+        day4f.config(text=y)
+    elif x == 'Friday':
+        day5f.config(text=y)
+    elif x == 'Saturday':
+        day6f.config(text=y)
+    elif x == 'Sunday':
+        day7f.config(text=y)
+
 main = Tk()
 main.title('Prototype Beta')
-main.geometry('400x150')
+main.geometry('450x150')
 main.configure(background='#1a2634')
 
 topframe = Frame(main, bg='#eec550', height='30')
@@ -114,7 +130,7 @@ can1 = Canvas(topframe,height='20',width='125',bg='#eec550',highlightthickness=0
 can1.create_line(0, 5, 20, 5,fill='#203e5f')
 can1.create_line(0, 10, 20, 10,fill='#203e5f')
 can1.create_line(0, 15, 20, 15,fill='#203e5f')
-can1.bind('test',test )
+can1.bind('cal',cal )
 bu1 = Button(topframe, text='Calender', highlightbackground='#eec550', command=cal)
 inv1 = Label(topframe, text='                              ', bg='#eec550')
 inv2 = Label(topframe, text='                              ', bg='#eec550')
